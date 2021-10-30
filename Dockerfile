@@ -8,6 +8,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 EXPOSE 8080
 
+COPY app/* /usr/share/nginx/html
+
 ENTRYPOINT [“/usr/sbin/nginx”]
 
 CMD [“start”, “-g”]
