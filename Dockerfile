@@ -10,6 +10,4 @@ EXPOSE 8080
 
 COPY app/* /usr/share/nginx/html
 
-ENTRYPOINT [“/usr/bin/nginx”]
-
 CMD [“start”, “-g”]
