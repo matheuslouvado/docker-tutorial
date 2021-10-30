@@ -1,11 +1,4 @@
-FROM ubuntu
+FROM nginx:alpine
 
-RUN apt-get update
-RUN apt-get install -y nginx && apt-get clean
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY app/. /usr/share/nginx/html
 
-EXPOSE 8080
-
-COPY app/* /usr/share/nginx/html
